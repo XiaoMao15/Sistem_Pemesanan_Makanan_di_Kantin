@@ -1,0 +1,72 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sistem Kantin</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            /* Sedikit jarak agar antar bagian tidak menempel */
+            .row {
+                margin-bottom: 10px;
+            }
+            .content-area {
+                min-height: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <%@ include file="header.jsp" %>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <%@ include file="menu.jsp" %>
+                </div>
+            </div>
+
+            <div class="row content-area">
+                <div class="col-md-4">
+                    <%@ include file="sidebar.jsp" %>
+                </div>
+
+                <div class="col-md-8">
+                    <%
+                        // Logika pemanggil halaman agar dinamis
+                        String p = request.getParameter("page");
+                        if (p == null || p.equals("home")) {
+                    %> <%@ include file="main.jsp" %> <%
+                            } else if (p.equals("keranjang")) {
+                    %> <%@ include file="keranjang.jsp" %> <%
+                            } else if (p.equals("activity")) {
+                    %> <%@ include file="activity.jsp" %> <%
+                            } else if (p.equals("login")) {
+                    %> <%@ include file="login.jsp" %> <%
+                            } else if (p.equals("about")) {
+                    %> <%@ include file="about.jsp" %> <%
+                            } else if (p.equals("contact")) {
+                    %> <%@ include file="contact.jsp" %> <%
+                            } else {
+                    %> <%@ include file="main.jsp" %> <%
+                                }
+                    %>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <%@ include file="footer.jsp" %>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
