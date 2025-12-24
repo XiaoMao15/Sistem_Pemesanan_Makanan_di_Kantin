@@ -28,10 +28,10 @@
       
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.jsp?page=login">Login</a>
+          <a class="nav-link" href="login.jsp?page=login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.jsp?page=register">Daftar</a>
+          <a class="nav-link" href="register.jsp?page=register">Register</a>
         </li>
       </ul>
     </div>
