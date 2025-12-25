@@ -15,6 +15,8 @@
                 min-height: 500px;
             }
         </style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     </head>
     <body>
         <div class="container-fluid">
@@ -38,20 +40,25 @@
 
                 <div class="col-md-8">
                     <%
-                        // Logika pemanggil halaman agar dinamis
                         String p = request.getParameter("page");
                         if (p == null || p.equals("home")) {
                     %> <%@ include file="main.jsp" %> <%
                             } else if (p.equals("keranjang")) {
                     %> <%@ include file="keranjang.jsp" %> <%
-                            } else if (p.equals("activity")) {
-                    %> <%@ include file="activity.jsp" %> <%
                             } else if (p.equals("login")) {
                     %> <%@ include file="login.jsp" %> <%
                             } else if (p.equals("about")) {
                     %> <%@ include file="about.jsp" %> <%
                             } else if (p.equals("contact")) {
                     %> <%@ include file="contact.jsp" %> <%
+                            } else if (p.equals("makanan")) {
+                    %> <%@ include file="makanan.jsp" %> <%
+                            } else if (p.equals("minuman")) {
+                    %> <%@ include file="minuman.jsp" %> <%
+                            } else if (p.equals("snack")) {
+                    %> <%@ include file="snack.jsp" %> <%
+                            } else if (p.equals("order")) {
+                    %> <%@ include file="order.jsp" %> <%
                             } else {
                     %> <%@ include file="main.jsp" %> <%
                                 }
