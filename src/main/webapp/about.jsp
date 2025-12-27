@@ -27,7 +27,7 @@
     }
 
     .brand-accent {
-        color: #A67B5B;
+        color: #604a3e;
         font-weight: 800;
         letter-spacing: 2px;
     }
@@ -91,7 +91,7 @@
             <h6 class="text-uppercase fw-bold mb-2" style="color: #A67B5B;">FoodieCall Experience</h6>
             <h1 class="display-4 fw-bold mb-4">ABOUT <span class="brand-accent">FOODIECALL</span></h1>
             <p class="lead fw-normal mb-4">
-                Udah gak zaman nunggu lama di depan meja kantin.
+                Efisiensi waktu istirahat tanpa antrean fisik di meja kantin.
             </p>
             <p class="mb-5" style="text-align: justify;">
                 FoodieCall merupakan sistem pemesanan menu kantin berbasis digital yang dirancang untuk mendukung efisiensi waktu mahasiswa di lingkungan kampus. Kami memahami bahwa produktivitas akademik sering kali terhambat oleh antrean yang panjang. Melalui FoodieCall, mahasiswa dapat melakukan pemesanan menu lebih awal dari ruang kelas, sehingga proses pengambilan hidangan di kantin dapat dilakukan secara instan tanpa perlu menunggu. Sistem ini hadir untuk menciptakan ekosistem layanan kantin yang lebih terorganisir, cepat, dan transparan.            </p>
