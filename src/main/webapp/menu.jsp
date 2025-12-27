@@ -123,7 +123,7 @@
           <span class="cart-badge">0</span>
         </a>
         <a href="index.jsp?page=order" class="btn-order-now">Order Now</a>
-        <a href="index.jsp?page=login" class="btn-login-kantin">Login</a>
+        <a href="login.jsp?page=login" class="btn-login-kantin">Login</a>
       </div>
     </div>
   </div>

@@ -1,0 +1,49 @@
+/* Gaya Khusus Halaman Mandiri (Login & Register) */
+.body-auth {
+    background-color: #fdfbf0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.auth-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #e0dcc5;
+    text-align: center;
+}
+
+.auth-container h2 {
+    color: #a68044;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.auth-container .form-control {
+    height: 45px;
+    margin-bottom: 15px;
+    border: 1px solid #d1ccb9;
+}
+
+.btn-gold {
+    background-color: #a68044;
+    color: white;
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-gold:hover {
+    background-color: #8e6d3a;
+    color: white;
+}
