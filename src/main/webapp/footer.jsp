@@ -1,8 +1,8 @@
 <%-- footer.jsp --%>
 <style>
     .foodie-footer {
-        background-color: #f5f2ed; /* Warna latte terang sesuai index.jsp */
-        color: #432818; /* Cokelat tua untuk teks */
+        background-color: #604a3e; 
+        color: #FFF8E1; /* Cokelat tua untuk teks */
         padding: 40px 0 20px;
         border-top: 1px solid rgba(67, 40, 24, 0.1); /* Garis tipis estetik */
         font-family: 'Plus Jakarta Sans', sans-serif;
@@ -17,7 +17,7 @@
     .footer-text {
         font-size: 0.9rem;
         line-height: 1.6;
-        color: #604a3e;
+        color: #FFF8E1;
     }
     .footer-contact-item {
         display: flex;
@@ -28,7 +28,7 @@
     .footer-contact-item i {
         margin-right: 10px;
         font-size: 1.1rem;
-        color: #99582a;
+        color: #FFF8E1;
     }
     .footer-social-link {
         display: flex;
@@ -40,7 +40,7 @@
         transition: 0.3s;
     }
     .footer-social-link:hover {
-        color: #99582a;
+        color: #FFF8E1;
     }
     .footer-social-link i {
         margin-right: 10px;
@@ -51,7 +51,7 @@
         padding-top: 20px;
         border-top: 1px solid rgba(67, 40, 24, 0.05);
         font-size: 0.85rem;
-        color: #8d7b70;
+        color: #FFF8E1;
     }
 </style>
 
