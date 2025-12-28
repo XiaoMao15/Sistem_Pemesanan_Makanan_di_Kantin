@@ -4,14 +4,56 @@
     Author     : MyBook Hype AMD
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<%@ page import="java.util.*" %>
+
+<h2>Keranjang Belanja</h2>
+
+<%
+    List<Map<String, Object>> cart =
+        (List<Map<String, Object>>) session.getAttribute("cart");
+
+    if (cart == null || cart.isEmpty()) {
+%>
+    <p>Keranjang masih kosong.</p>
+<%
+    } else {
+        int total = 0;
+%>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Nama Menu</th>
+        <th>Harga</th>
+        <th>Jumlah</th>
+        <th>Subtotal</th>
+        <th>Aksi</th>
+    </tr>
+
+<%
+    for (Map<String, Object> item : cart) {
+        int harga = (int) item.get("harga");
+        int qty = (int) item.get("qty");
+        int subtotal = harga * qty;
+        total += subtotal;
+%>
+    <tr>
+        <td><%= item.get("nama") %></td>
+        <td>Rp <%= harga %></td>
+        <td><%= qty %></td>
+        <td>Rp <%= subtotal %></td>
+        <td>
+            <a href="hapusKeranjang.jsp?id=<%= item.get("id") %>">Hapus</a>
+        </td>
+    </tr>
+<%
+    }
+%>
+    <tr>
+        <td colspan="3"><b>Total</b></td>
+        <td colspan="2"><b>Rp <%= total %></b></td>
+    </tr>
+</table>
+
+<%
+    }
+%>
