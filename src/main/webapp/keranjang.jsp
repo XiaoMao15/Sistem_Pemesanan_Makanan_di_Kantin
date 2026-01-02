@@ -53,6 +53,20 @@
         <td colspan="2"><b>Rp <%= total %></b></td>
     </tr>
 </table>
+    
+<div style="margin-top:20px; text-align:right;">
+    <form action="checkout.jsp" method="post">
+        <button type="submit"
+                style="padding:10px 20px;
+                       background:#C19A6B;
+                       color:white;
+                       border:none;
+                       border-radius:5px;
+                       cursor:pointer;">
+            Checkout
+        </button>
+    </form>
+</div>
 
 <%
     }
