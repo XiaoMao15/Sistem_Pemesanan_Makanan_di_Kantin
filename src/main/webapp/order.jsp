@@ -70,11 +70,14 @@
         border-radius: 5px;
         padding: 5px 10px;
         font-size: 0.8rem;
+        text-decoration: none; /* Agar link tidak ada garis bawah */
+        display: inline-block;
     }
 
     .btn-latte:hover {
         background-color: var(--latte-dark);
         color: white;
+        text-decoration: none;
     }
 </style>
 
@@ -99,7 +102,8 @@
                     <p class="small text-muted mb-2">Resep tradisional dengan bumbu rempah pilihan.</p>
                     <div class="d-flex justify-content-between align-items-center mt-auto">
                         <span class="price-tag small">Rp 18.000</span>
-                        <button class="btn btn-latte"><i class="bi bi-cart"></i></button>
+                        <!-- Link ke tambahKeranjang.jsp dengan parameter -->
+                        <a href="tambahKeranjang.jsp?id=1&nama=Nasi Goreng Jawa&harga=18000" class="btn btn-latte" onclick="return confirm('Tambah Nasi Goreng Jawa ke keranjang?')"><i class="bi bi-cart"></i></a>
                     </div>
                 </div>
             </div>
@@ -119,7 +123,7 @@
                     <p class="small text-muted mb-2">Mie kenyal dengan topping ayam melimpah.</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <span class="price-tag small">Rp 15.000</span>
-                        <button class="btn btn-latte"><i class="bi bi-cart"></i></button>
+                        <a href="tambahKeranjang.jsp?id=2&nama=Mie Ayam Bakso&harga=15000" class="btn btn-latte" onclick="return confirm('Tambah Mie Ayam Bakso ke keranjang?')"><i class="bi bi-cart"></i></a>
                     </div>
                 </div>
             </div>
@@ -139,7 +143,7 @@
                     <p class="small text-muted mb-2">Pisang manis dengan balutan tepung renyah.</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <span class="price-tag small">Rp 10.000</span>
-                        <button class="btn btn-latte"><i class="bi bi-cart"></i></button>
+                        <a href="tambahKeranjang.jsp?id=3&nama=Pisang Goreng Crispy&harga=10000" class="btn btn-latte" onclick="return confirm('Tambah Pisang Goreng Crispy ke keranjang?')"><i class="bi bi-cart"></i></a>
                     </div>
                 </div>
             </div>
@@ -159,7 +163,7 @@
                     <p class="small text-muted mb-2">Siomay kukus dengan bumbu kacang kental.</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <span class="price-tag small">Rp 12.000</span>
-                        <button class="btn btn-latte"><i class="bi bi-cart"></i></button>
+                        <a href="tambahKeranjang.jsp?id=4&nama=Siomay Ikan Tenggiri&harga=12000" class="btn btn-latte" onclick="return confirm('Tambah Siomay Ikan Tenggiri ke keranjang?')"><i class="bi bi-cart"></i></a>
                     </div>
                 </div>
             </div>
@@ -179,7 +183,7 @@
                     <p class="small text-muted mb-2">Perpaduan teh dan susu yang pas.</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <span class="price-tag small">Rp 8.000</span>
-                        <button class="btn btn-latte"><i class="bi bi-cart"></i></button>
+                        <a href="tambahKeranjang.jsp?id=5&nama=Teh Tarik Dingin&harga=8000" class="btn btn-latte" onclick="return confirm('Tambah Teh Tarik Dingin ke keranjang?')"><i class="bi bi-cart"></i></a>
                     </div>
                 </div>
             </div>
@@ -199,7 +203,7 @@
                     <p class="small text-muted mb-2">Espresso dengan foam susu tebal.</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <span class="price-tag small">Rp 15.000</span>
-                        <button class="btn btn-latte"><i class="bi bi-cart"></i></button>
+                        <a href="tambahKeranjang.jsp?id=6&nama=Hot Cappuccino&harga=15000" class="btn btn-latte" onclick="return confirm('Tambah Hot Cappuccino ke keranjang?')"><i class="bi bi-cart"></i></a>
                     </div>
                 </div>
             </div>
