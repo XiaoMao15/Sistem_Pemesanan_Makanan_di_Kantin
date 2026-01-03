@@ -1,10 +1,10 @@
-<%@page import="config.Koneksi, java.sql.*"%>
+<%@page import="config.koneksi, java.sql.*"%>
 <%
     String user = request.getParameter("username");
     String pass = request.getParameter("password");
 
     try {
-        Connection con = Koneksi.getConnection();
+        Connection con = koneksi.getConnection();
         PreparedStatement ps = con.prepareStatement("SELECT * FROM users WHERE username=? AND password=?");
         ps.setString(1, user);
         ps.setString(2, pass);

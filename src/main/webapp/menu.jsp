@@ -33,6 +33,8 @@
     .nav-actions {
         display: flex;
         align-items: center;
+        /* Menambahkan flex-nowrap agar elemen di kanan tidak turun ke bawah */
+        flex-wrap: nowrap; 
     }
 
     /* Keranjang Latte */
@@ -46,6 +48,8 @@
         align-items: center;
         margin-right: 12px;
         font-weight: bold;
+        /* Tambahan agar icon dan angka tetap satu baris */
+        white-space: nowrap;
     }
 
     .cart-badge {
@@ -61,36 +65,51 @@
         font-size: 0.8rem;
     }
 
-    /* Tombol Order Latte */
+    /* Tombol Order Latte - DI FIX DISINI */
     .btn-order-now {
         background-color: var(--warna-latte);
         color: white !important;
-        padding: 8px 22px !important;
+        /* Padding samping dikurangi sedikit (dari 22px ke 15px) agar lebih hemat ruang */
+        padding: 8px 15px !important; 
         border-radius: 50px;
         font-weight: bold;
         text-decoration: none;
         margin-right: 12px;
         transition: 0.3s;
+        /* KUNCI FIX: Memaksa teks tetap satu baris */
+        white-space: nowrap; 
+        display: inline-block;
     }
 
     .btn-order-now:hover {
         background-color: var(--warna-latte-dark);
     }
 
-    /* Tombol Login Latte Outline */
-    .btn-login-kantin {
+    /* Tombol Login/Register/Logout Latte Outline */
+    .btn-auth-kantin {
         color: var(--warna-latte) !important;
         border: 2px solid var(--warna-latte);
-        padding: 6px 22px !important;
+        /* Padding disesuaikan agar proporsional */
+        padding: 6px 15px !important; 
         border-radius: 50px;
         font-weight: bold;
         text-decoration: none;
         transition: 0.3s;
+        margin-left: 5px;
+        white-space: nowrap;
     }
 
-    .btn-login-kantin:hover {
+    .btn-auth-kantin:hover {
         background-color: var(--warna-latte);
         color: white !important;
+    }
+    
+    .user-greeting {
+        color: var(--warna-teks-abu);
+        font-weight: 600;
+        margin-right: 15px;
+        /* Mencegah nama user tertekuk jika terlalu panjang */
+        white-space: nowrap; 
     }
 </style>
 
@@ -103,6 +122,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
+      <%-- Mengubah mx-auto menjadi ms-auto jika ingin memberi ruang lebih di kanan --%>
       <ul class="navbar-nav mx-auto">
         <li class="nav-item"><a class="nav-link" href="index.jsp?page=home">Home</a></li>
         <li class="nav-item dropdown">
@@ -123,7 +143,15 @@
           <span class="cart-badge">0</span>
         </a>
         <a href="index.jsp?page=order" class="btn-order-now">Order Now</a>
-        <a href="login.jsp?page=login" class="btn-login-kantin">Login</a>
+
+        <%-- Logika Login Tetap Sama --%>
+        <% if (session.getAttribute("username") == null) { %>
+            <a href="login.jsp" class="btn-auth-kantin">Login</a>
+            <a href="register.jsp" class="btn-auth-kantin">Daftar</a>
+        <% } else { %>
+            <span class="user-greeting">Halo, <%= session.getAttribute("nama") %></span>
+            <a href="logout.jsp" class="btn-auth-kantin">Logout</a>
+        <% } %>
       </div>
     </div>
   </div>
