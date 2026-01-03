@@ -96,7 +96,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-kantin sticky-top">
   <div class="container">
-    <a class="navbar-brand brand-text" href="index.jsp?page=home">KANTIN KITA</a>
+    <a class="navbar-brand brand-text" href="index.jsp?page=home">FoodieCall</a>
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
