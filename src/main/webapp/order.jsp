@@ -91,7 +91,7 @@
         <div class="col">
             <div class="card card-order">
                 <div class="img-wrapper">
-                    <img src="https://www.masakapahariini.com/wp-content/uploads/2018/04/cara-membuat-nasi-goreng-seafood-500x300.jpg" alt="Nasi Goreng">
+                    <img src="https://asset.kompas.com/crops/dQL-SQcsA1QuFWeRj6n6WZRcHTE=/202x66:1000x599/750x500/data/photo/2023/05/07/6456a450d2edd.jpg" alt="Nasi Goreng">
                 </div>
                 <div class="card-body p-3">
                     <div class="star-rating mb-1">
@@ -112,7 +112,7 @@
         <div class="col">
             <div class="card card-order">
                 <div class="img-wrapper">
-                    <img src="https://www.masakapahariini.com/wp-content/uploads/2023/03/Mie-Ayam-Bakso-500x300.jpg" alt="Mie Ayam">
+                    <img src="http://www.databisnisekonomi.com/wp-content/uploads/2018/11/resep-mie-ayam-bakso-1.jpg" alt="Mie Ayam">
                 </div>
                 <div class="card-body p-3">
                     <div class="star-rating mb-1">
@@ -132,7 +132,7 @@
         <div class="col">
             <div class="card card-order">
                 <div class="img-wrapper">
-                    <img src="https://img-global.cpcdn.com/recipes/792b7c6c4c5e3175/680x482cq70/pisang-goreng-pasir-crispy-foto-resep-utama.jpg" alt="Pisang Goreng">
+                    <img src="https://cdn0-production-images-kly.akamaized.net/3ChxMc1fzTjz7DIAz5qKoAzr4HU=/1x63:1000x626/1200x675/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/4439167/original/080873300_1684911560-shutterstock_2220175069.jpg" alt="Pisang Goreng">
                 </div>
                 <div class="card-body p-3">
                     <div class="star-rating mb-1">
@@ -152,7 +152,7 @@
         <div class="col">
             <div class="card card-order">
                 <div class="img-wrapper">
-                    <img src="https://www.masakapahariini.com/wp-content/uploads/2019/01/siomay-ikan-780x440.jpg" alt="Siomay">
+                    <img src="http://resepmakanan-id.com/wp-content/uploads/2021/08/siomay2.jpg" alt="Siomay">
                 </div>
                 <div class="card-body p-3">
                     <div class="star-rating mb-1">
@@ -172,7 +172,7 @@
         <div class="col">
             <div class="card card-order">
                 <div class="img-wrapper">
-                    <img src="https://www.frisianflag.com/storage/app/media/resep-kami/resep-minuman/Es-Teh-Tarik-Jelly/Thumbnail-Resep-Es-Teh-Tarik-Jelly.jpg" alt="Teh Tarik">
+                    <img src="https://asset-2.tstatic.net/style/foto/bank/images/teh-tarik_20170820_150340.jpg" alt="Teh Tarik">
                 </div>
                 <div class="card-body p-3">
                     <div class="star-rating mb-1">
@@ -192,7 +192,7 @@
         <div class="col">
             <div class="card card-order">
                 <div class="img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1544145945-f904253d0c71?q=80&w=500&h=300&auto=format&fit=crop" alt="Coffee">
+                    <img src="https://i.fbcd.co/products/resized/resized-750-500/3b31edc71a1cf0a10a880ebacfec9cf60fc1a2a9ab9755a9e9b644fdbcbab2d3.jpg" alt="Coffee">
                 </div>
                 <div class="card-body p-3">
                     <div class="star-rating mb-1">
