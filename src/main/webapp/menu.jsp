@@ -33,96 +33,87 @@
     .nav-actions {
         display: flex;
         align-items: center;
-        /* Menambahkan flex-nowrap agar elemen di kanan tidak turun ke bawah */
         flex-wrap: nowrap; 
     }
 
-    /* Keranjang Latte */
+    /* Styling Keranjang */
     .cart-container {
-        background-color: var(--warna-latte);
-        color: white !important;
-        padding: 6px 16px;
-        border-radius: 50px;
+        position: relative;
+        margin-right: 25px; 
+        color: var(--warna-latte);
         text-decoration: none;
+        transition: 0.3s;
         display: flex;
         align-items: center;
-        margin-right: 12px;
-        font-weight: bold;
-        /* Tambahan agar icon dan angka tetap satu baris */
-        white-space: nowrap;
+    }
+    
+    .cart-container i { font-size: 1.3rem; }
+
+    .cart-text {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-left: 8px;
+        color: var(--warna-teks-abu);
     }
 
     .cart-badge {
-        background-color: white;
-        color: var(--warna-latte);
-        border-radius: 50%;
-        width: 22px;
-        height: 22px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 8px;
-        font-size: 0.8rem;
-    }
-
-    /* Tombol Order Latte - DI FIX DISINI */
-    .btn-order-now {
-        background-color: var(--warna-latte);
-        color: white !important;
-        /* Padding samping dikurangi sedikit (dari 22px ke 15px) agar lebih hemat ruang */
-        padding: 8px 15px !important; 
-        border-radius: 50px;
-        font-weight: bold;
-        text-decoration: none;
-        margin-right: 12px;
-        transition: 0.3s;
-        /* KUNCI FIX: Memaksa teks tetap satu baris */
-        white-space: nowrap; 
-        display: inline-block;
-    }
-
-    .btn-order-now:hover {
+        position: absolute;
+        top: -8px;
+        right: -12px;
         background-color: var(--warna-latte-dark);
+        color: white;
+        font-size: 0.7rem;
+        padding: 2px 6px;
+        border-radius: 50%;
+        font-weight: bold;
     }
 
-    /* Tombol Login/Register/Logout Latte Outline */
+    /* Tombol Auth */
     .btn-auth-kantin {
-        color: var(--warna-latte) !important;
-        border: 2px solid var(--warna-latte);
-        /* Padding disesuaikan agar proporsional */
-        padding: 6px 15px !important; 
+        background-color: var(--warna-latte);
+        color: white;
+        padding: 6px 18px;
         border-radius: 50px;
-        font-weight: bold;
+        font-weight: 600;
         text-decoration: none;
         transition: 0.3s;
+        border: none;
         margin-left: 5px;
-        white-space: nowrap;
+        font-size: 0.9rem;
     }
 
-    .btn-auth-kantin:hover {
-        background-color: var(--warna-latte);
-        color: white !important;
-    }
-    
-    .user-greeting {
-        color: var(--warna-teks-abu);
+    .btn-outline-latte {
+        background-color: transparent;
+        color: var(--warna-latte);
+        border: 2px solid var(--warna-latte);
+        padding: 5px 18px;
+        border-radius: 50px;
         font-weight: 600;
-        margin-right: 15px;
-        /* Mencegah nama user tertekuk jika terlalu panjang */
-        white-space: nowrap; 
+        text-decoration: none;
+        transition: 0.3s;
+        margin-left: 10px;
+        font-size: 0.9rem;
+    }
+
+    .btn-auth-kantin:hover, .btn-outline-latte:hover {
+        background-color: var(--warna-latte-dark);
+        color: white;
+        transform: translateY(-2px);
     }
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-kantin sticky-top">
   <div class="container">
-    <a class="navbar-brand brand-text" href="index.jsp?page=home">FoodieCall</a>
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <a class="navbar-brand d-flex align-items-center" href="index.jsp">
+      <i class="bi bi-cup-hot-fill me-2" style="color: var(--warna-latte); font-size: 1.8rem;"></i>
+      <span class="brand-text">Foodie<span style="color: var(--warna-latte);">Cal</span></span>
+    </a>
+
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-      <%-- Mengubah mx-auto menjadi ms-auto jika ingin memberi ruang lebih di kanan --%>
       <ul class="navbar-nav mx-auto">
         <li class="nav-item"><a class="nav-link" href="index.jsp?page=home">Home</a></li>
         <li class="nav-item dropdown">
@@ -140,17 +131,28 @@
       <div class="nav-actions">
         <a href="index.jsp?page=keranjang" class="cart-container">
           <i class="bi bi-cart-fill"></i>
-          <span class="cart-badge">0</span>
+          <span class="cart-text d-none d-md-inline">Keranjang</span>
+          <%
+              // Menghitung total quantity barang di keranjang
+              int totalItem = 0;
+              java.util.List<java.util.Map<String, Object>> cartList = 
+                  (java.util.List<java.util.Map<String, Object>>) session.getAttribute("cart");
+              if (cartList != null) {
+                  for (java.util.Map<String, Object> item : cartList) {
+                      totalItem += (int) item.get("qty");
+                  }
+              }
+          %>
+          <span class="cart-badge"><%= totalItem %></span>
         </a>
-        <a href="index.jsp?page=order" class="btn-order-now">Order Now</a>
 
-        <%-- Logika Login Tetap Sama --%>
         <% if (session.getAttribute("username") == null) { %>
             <a href="login.jsp" class="btn-auth-kantin">Login</a>
             <a href="register.jsp" class="btn-auth-kantin">Daftar</a>
         <% } else { %>
             <span class="user-greeting">Halo, <%= session.getAttribute("nama") %></span>
             <a href="logout.jsp" class="btn-auth-kantin">Logout</a>
+            </div>
         <% } %>
       </div>
     </div>

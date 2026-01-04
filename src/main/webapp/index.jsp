@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>FoodieCall</title>
+        <title>Sistem Kantin</title>
         <link href="css/bootstrap.min.css" rel="stylesheet" />
         <style>
             .row { margin-bottom: 10px; }
@@ -33,11 +33,8 @@
                         <%@ include file="order.jsp" %>
                     </div>
                 <% } else { %>
-                    <div class="col-md-4">
-                        <%@ include file="sidebar.jsp" %>
-                    </div>
-
-                    <div class="col-md-8">
+                
+                    <div class="col-md-12">
                         <%
                             if (p.equals("home")) {
                                 %> <%@ include file="main.jsp" %> <%

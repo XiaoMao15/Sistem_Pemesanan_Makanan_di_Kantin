@@ -8,10 +8,6 @@
         border-radius: 30px;
         color: #3E2723;
 
-        /* Trik untuk memenuhi samping kiri tanpa ubah index.jsp */
-        margin-left: -53%; /* Menarik konten ke area sidebar (col-md-4) */
-        width: 153%;       /* Melebarkan konten agar totalnya 100% layar */
-
         position: relative;
         z-index: 10;
         box-shadow: 0 10px 40px rgba(111, 78, 55, 0.1);
