@@ -12,7 +12,7 @@ public class koneksi {
             try {
                 String url = "jdbc:postgresql://localhost:5432/kantin"; 
                 String user = "postgres"; 
-                String pass = "parid"; // <-- GANTI INI
+                String pass = "rapip"; // <-- GANTI INI
 
                 Class.forName("org.postgresql.Driver");
                 koneksi = DriverManager.getConnection(url, user, pass);
