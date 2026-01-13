@@ -13,7 +13,6 @@
         box-shadow: 0 10px 40px rgba(111, 78, 55, 0.1);
     }
 
-    /* Responsif: Jika di HP (layar kecil), biarkan ukurannya normal */
     @media (max-width: 768px) {
         .about-section {
             margin-left: 0;
@@ -52,11 +51,11 @@
     }
 
     .food-img-container img {
-        transition: transform 0.5s ease; /* Mengatur durasi gerak */
+        transition: transform 0.5s ease; 
     }
 
     .food-img-container:hover img {
-        transform: scale(1.1) rotate(2deg); /* Gambar membesar dan miring sedikit */
+        transform: scale(1.1) rotate(2deg); 
     }
 
     @keyframes float {
@@ -75,7 +74,6 @@
         animation: float 4s ease-in-out infinite;
     }
 
-    /* Memberikan jeda waktu agar tidak semua gambar naik turun bersamaan */
     .food-img-container:nth-child(even) {
         animation-delay: 1s;
     }

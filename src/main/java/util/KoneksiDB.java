@@ -2,26 +2,25 @@ package util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class KoneksiDB {
+    private static Connection koneksi;
 
     public static Connection getConnection() {
-        try {
-            String url = "jdbc:postgresql://localhost:5432/dbpemesanan_kantin";
-            String user = "postgres";
-            String pass = "12345";
+        if (koneksi == null) {
+            try {
+                String url = "jdbc:postgresql://localhost:5432/kantin_db"; 
+                String user = "postgres"; 
+                String pass = "12345"; // <-- GANTI INI
 
-            return DriverManager.getConnection(url, user, pass);
-        } catch (Exception e) {
-            e.printStackTrace(); // WAJIB
-            System.out.println("Koneksi gagal: " + e.getMessage());
-            return null;
+                Class.forName("org.postgresql.Driver");
+                koneksi = DriverManager.getConnection(url, user, pass);
+                System.out.println("Koneksi Berhasil!");
+            } catch (ClassNotFoundException | SQLException e) {
+                System.out.println("Koneksi Gagal: " + e.getMessage());
+            }
         }
-    }
-
-    public static void main(String[] args) {
-        if (KoneksiDB.getConnection() != null) {
-            System.out.println("Koneksi berhasil");
-        }
+        return koneksi;
     }
 }

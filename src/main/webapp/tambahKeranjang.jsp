@@ -1,42 +1,56 @@
-<%-- 
-    Document   : tambahKeranjang
-    Created on : 28 Dec 2025, 08.29.24
-    Author     : ACER
---%>
-
 <%@ page import="java.util.*" %>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-    int id = Integer.parseInt(request.getParameter("id"));
-    String nama = request.getParameter("nama");
-    int harga = Integer.parseInt(request.getParameter("harga"));
+ 
+    try {
+        String idStr = request.getParameter("id_produk");
+        String nama = request.getParameter("nama_produk");
+        String hargaStr = request.getParameter("harga_produk");
+        String qtyStr = request.getParameter("qty");
 
-    List<Map<String, Object>> cart =
-        (List<Map<String, Object>>) session.getAttribute("cart");
+        if (idStr != null && nama != null && hargaStr != null) {
+            
+            int id = Integer.parseInt(idStr);
+            int harga = Integer.parseInt(hargaStr);
+            int qty = (qtyStr != null) ? Integer.parseInt(qtyStr) : 1;
 
-    if (cart == null) {
-        cart = new ArrayList<>();
-    }
+          ArrayList<Map<String, Object>> cart = (ArrayList<Map<String, Object>>) session.getAttribute("cart");
+            
+            if (cart == null) {
+                cart = new ArrayList<>();
+            }
 
-    boolean found = false;
+            boolean isExist = false;
+            for (Map<String, Object> item : cart) {
+                int itemId = (int) item.get("id");
+                
+                if (itemId == id) {
+                    int oldQty = (int) item.get("qty");
+                    item.put("qty", oldQty + qty);
+                    isExist = true;
+                    break;
+                }
+            }
 
-    for (Map<String, Object> item : cart) {
-        if ((int) item.get("id") == id) {
-            item.put("qty", (int) item.get("qty") + 1);
-            found = true;
-            break;
+            if (!isExist) {
+                Map<String, Object> newItem = new HashMap<>();
+                newItem.put("id", id);
+                newItem.put("nama", nama);
+                newItem.put("harga", harga);
+                newItem.put("qty", qty);
+                newItem.put("subtotal", harga * qty); 
+                
+                cart.add(newItem);
+            }
+
+            session.setAttribute("cart", cart);
         }
-    }
 
-    if (!found) {
-        Map<String, Object> item = new HashMap<>();
-        item.put("id", id);
-        item.put("nama", nama);
-        item.put("harga", harga);
-        item.put("qty", 1);
-        cart.add(item);
-    }
+      response.sendRedirect("index.jsp?page=daftar_menu");
 
-    session.setAttribute("cart", cart);
-    response.sendRedirect("index.jsp?page=keranjang");
+    } catch (Exception e) {
+        out.println("<h3>Terjadi Kesalahan: " + e.getMessage() + "</h3>");
+        e.printStackTrace();
+    }
 %>

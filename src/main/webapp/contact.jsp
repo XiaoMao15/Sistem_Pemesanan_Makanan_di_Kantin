@@ -5,13 +5,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <style>
-    /* Variabel Warna Latte */
     :root {
-        --latte-bg: #FDF5E6;      /* Cream Muda (Old Lace) */
-        --latte-primary: #8E735B;  /* Cokelat Latte */
-        --latte-secondary: #C6AC8F; /* Warna Sand/Pasir */
-        --latte-dark: #5E503F;     /* Coffee Brown */
-        --latte-text: #3E2723;     /* Dark Chocolate */
+        --latte-bg: #FDF5E6;      
+        --latte-primary: #8E735B;  
+        --latte-secondary: #C6AC8F; 
+        --latte-dark: #5E503F;     
+        --latte-text: #3E2723;     
     }
 
     .contact-wrapper {

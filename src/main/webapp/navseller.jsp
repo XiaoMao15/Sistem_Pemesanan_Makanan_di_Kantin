@@ -1,15 +1,10 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    // 1. CEK ROLE & SESSION
     String r = (String) session.getAttribute("role");
     String u = (String) session.getAttribute("username");
     
-    // Normalisasi role agar aman (handle null)
     if (r == null) r = "guest"; 
     
-    // 2. ATURAN ADMIN: 
-    // Jika Admin, JANGAN tampilkan navbar ini sama sekali.
-    // Admin punya header sendiri di dashboardnya.
     if (r.equalsIgnoreCase("admin")) {
         return; 
     }
@@ -36,7 +31,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-kantin sticky-top">
   <div class="container">
-    <a class="navbar-brand brand-text" href="index.jsp">
+    <a class="navbar-brand brand-text" href="#">
       <i class="bi bi-cup-hot-fill text-warning fs-4 me-2"></i>
       Foodie<span style="color: var(--warna-latte)">Call</span>
     </a>
@@ -47,24 +42,12 @@
     
     <div class="collapse navbar-collapse" id="navUtama">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item"><a class="nav-link" href="index.jsp?page=home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="index.jsp?page=daftar_menu">Menu</a></li>
-        <li class="nav-item"><a class="nav-link" href="index.jsp?page=about">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="index.jsp?page=contact">Contact Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="index.jsp?page=gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="penjual_dashboard.jsp">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="kelola_menu.jsp">kelola Menu</a></li>
       </ul>
 
       <div class="d-flex align-items-center">
-        <a href="index.jsp?page=keranjang" class="cart-box">
-          <i class="bi bi-cart-fill fs-5"></i>
-          <%
-              java.util.List c = (java.util.List) session.getAttribute("cart");
-              int jml = (c != null) ? c.size() : 0;
-              if(jml > 0) { 
-          %>
-            <span class="cart-count"><%= jml %></span>
-          <% } %>
-        </a>
+       
 
         <% if (u == null) { %>
             <a href="login.jsp" class="btn-login">Login</a>
