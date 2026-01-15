@@ -38,7 +38,7 @@
 
 <div class="container mt-2">
     <div class="hero-banner shadow-sm">
-        <h1 class="display-5 fw-bold">Selamat Datang di KantinKu</h1>
+        <h1 class="display-5 fw-bold" style="color:#b6a897">Selamat Datang di KantinKu</h1>
         <p class="lead">Cita rasa kopi latte dan masakan rumah dalam satu tempat.</p>
         <a href="index.jsp?page=daftar_menu" class="btn btn-light rounded-pill px-4 fw-bold" style="color: #4B3832;">Lihat Semua Menu</a>
     </div>

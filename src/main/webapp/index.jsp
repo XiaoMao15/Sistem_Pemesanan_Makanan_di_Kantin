@@ -60,6 +60,8 @@
                     <%@ include file="contact.jsp" %>
                     <% } else if (p.equals("gallery")) { %>
                     <%@ include file="gallery.jsp" %>
+                    <% } else if (p.equals("history")) { %>
+                    <%@ include file="history.jsp" %>
                     <% } else {%>
                     <%@ include file="main.jsp" %>
                     <% }%>

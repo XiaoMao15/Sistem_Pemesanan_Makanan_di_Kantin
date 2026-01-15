@@ -54,7 +54,10 @@
         <li class="nav-item"><a class="nav-link" href="index.jsp?page=gallery">Gallery</a></li>
       </ul>
 
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center gap-3">
+        <a href="index.jsp?page=history" class="text-decoration-none text-dark fw-semibold">
+        <i class="bi bi-clock-history"></i> History
+       </a>
         <a href="index.jsp?page=keranjang" class="cart-box">
           <i class="bi bi-cart-fill fs-5"></i>
           <%
