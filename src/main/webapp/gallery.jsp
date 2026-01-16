@@ -145,20 +145,18 @@
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="https://ui-avatars.com/api/?name=Siti+Aminah&background=198754&color=fff&size=150" class="profile-img" alt="Foto Anggota">
+                            <img src="images/hasna.jpeg" class="profile-img" alt="Foto Anggota">
                             
                             <h4 class="fw-bold m-0">Hasna Ghaniyyah </h4>
-                            <span class="text-muted small mb-2">System Analyst</span>
-                            <div class="nim-text">NIM: 20240003</div>
+                            <span class="text-muted small mb-2">frontend</span>
+                            <div class="nim-text">NIM: 0110224062</div>
                         </div>
 
                         <div class="flip-card-back bg-laporan">
-                            <h4 class="fw-bold mb-3"><i class="bi bi-file-text"></i> Tugas Laporan</h4>
+                            <h4 class="fw-bold mb-3"><i class="bi bi-file-text"></i> Tugas Frontend</h4>
                             <ul class="list-unstyled text-start w-100 px-4">
-                                <li class="mb-2"><i class="bi bi-check2-square"></i> Membuat ERD & Flowchart</li>
-                                <li class="mb-2"><i class="bi bi-check2-square"></i> Testing Manual</li>
-                                <li class="mb-2"><i class="bi bi-check2-square"></i> Dokumentasi Fitur</li>
-                                <li class="mb-2"><i class="bi bi-check2-square"></i> Menyusun Laporan Akhir</li>
+                                <li class="mb-2"><i class="bi bi-check2-square"></i> About us page</li>
+                                <li class="mb-2"><i class="bi bi-check2-square"></i> Footer</li>
                             </ul>
                         </div>
                     </div>
